@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>甯﹁柂鍋ヨ剳 路 鎽搁奔鎽稿嚭绔炰簤鍔?/title>
-<meta name="description" content="甯﹁柂鍋ヨ剳:鎵撳伐浜虹殑鑴戝姏璇鹃棿鎿嶃€傚弽搴斿姏銆佽垝灏旂壒鏂规牸銆丼troop 鑹茶瘝銆佹暟瀛楄蹇嗐€侀檺鏃舵墦闈躲€佸簭鍒楄蹇嗐€佽鲸鑹层€佸績绠椼€佺炕鐗岄厤瀵?澶栧姞 20-20-20 鎶ょ溂銆傛懜楸兼懜鍑虹珵浜夊姏銆?>
+<title>带薪健脑 · 摸鱼摸出竞争力</title>
+<meta name="description" content="带薪健脑:打工人的脑力课间操。反应力、舒尔特方格、Stroop 色词、数字记忆、限时打靶、序列记忆、辨色、心算、翻牌配对,外加 20-20-20 护眼。摸鱼摸出竞争力。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -230,183 +230,183 @@ footer b{color:var(--ink-2);font-weight:600}
 
 <header>
   <div class="signal" aria-hidden="true"><span class="a"></span><span class="b"></span><span class="c"></span></div>
-  <h1>甯﹁柂鍋ヨ剳</h1>
-  <p class="tagline">鎽搁奔鎽稿嚭绔炰簤鍔涒€斺€斾節涓皬璁粌,鍞ら啋鍙嶅簲銆佷笓娉ㄣ€佽蹇嗗拰鎵嬮€?鍐嶇粰鐪肩潧鏀句釜鍋囥€?/p>
+  <h1>带薪健脑</h1>
+  <p class="tagline">摸鱼摸出竞争力——九个小训练,唤醒反应、专注、记忆和手速,再给眼睛放个假。</p>
   <nav>
-    <a href="#reaction">鍙嶅簲鍔?/a>
-    <a href="#schulte">鑸掑皵鐗?/a>
-    <a href="#stroop">鑹茶瘝</a>
-    <a href="#memory">璁板繂</a>
-    <a href="#aim">鎵撻澏</a>
-    <a href="#simon">搴忓垪</a>
-    <a href="#odd">杈ㄨ壊</a>
-    <a href="#math">蹇冪畻</a>
-    <a href="#pairs">缈荤墝</a>
-    <a href="#eyes">鎶ょ溂</a>
+    <a href="#reaction">反应力</a>
+    <a href="#schulte">舒尔特</a>
+    <a href="#stroop">色词</a>
+    <a href="#memory">记忆</a>
+    <a href="#aim">打靶</a>
+    <a href="#simon">序列</a>
+    <a href="#odd">辨色</a>
+    <a href="#math">心算</a>
+    <a href="#pairs">翻牌</a>
+    <a href="#eyes">护眼</a>
   </nav>
 </header>
 
 <section id="reaction">
-  <div class="sec-head"><span class="sec-num">01</span><h2>鍙嶅簲鍔涙祴璇?/h2></div>
-  <p class="sec-desc">鐐瑰嚮涓嬫柟鍖哄煙寮€濮?绛夊畠鍙樼豢鐨勭灛闂村啀鐐逛竴涓嬨€傚彉缁垮墠鐐逛簡绠楁姠璺戙€?/p>
-  <div id="pad" role="button" tabindex="0" aria-label="鍙嶅簲鍔涙祴璇曞尯,鐐瑰嚮鎴栨寜绌烘牸寮€濮?>
-    <div id="pad-main">鐐瑰嚮寮€濮?/div>
-    <div id="pad-sub">涔熷彲浠ユ寜绌烘牸閿?/div>
+  <div class="sec-head"><span class="sec-num">01</span><h2>反应力测试</h2></div>
+  <p class="sec-desc">点击下方区域开始,等它变绿的瞬间再点一下。变绿前点了算抢跑。</p>
+  <div id="pad" role="button" tabindex="0" aria-label="反应力测试区,点击或按空格开始">
+    <div id="pad-main">点击开始</div>
+    <div id="pad-sub">也可以按空格键</div>
   </div>
   <div class="stats">
-    <div class="stat"><i>鏈</i><b id="r-last">鈥?/b></div>
-    <div class="stat"><i>鏈€蹇?/i><b id="r-best">鈥?/b></div>
-    <div class="stat"><i>骞冲潎(杩?10 娆?</i><b id="r-avg">鈥?/b></div>
+    <div class="stat"><i>本次</i><b id="r-last">—</b></div>
+    <div class="stat"><i>最快</i><b id="r-best">—</b></div>
+    <div class="stat"><i>平均(近 10 次)</i><b id="r-avg">—</b></div>
   </div>
   <p class="grade" id="r-grade"></p>
 </section>
 
 <section id="schulte">
-  <div class="sec-head"><span class="sec-num">02</span><h2>鑸掑皵鐗规柟鏍?/h2></div>
-  <p class="sec-desc">鎸?1 鍒?N 鐨勯『搴忎緷娆＄偣鍑汇€傝瘈绐?鐪肩潧鐩綇涓績,鐢ㄤ綑鍏夋壘鏁板瓧銆?脳5 鍦?30 绉掑唴瀹屾垚绠椾紭绉€銆?/p>
+  <div class="sec-head"><span class="sec-num">02</span><h2>舒尔特方格</h2></div>
+  <p class="sec-desc">按 1 到 N 的顺序依次点击。诀窍:眼睛盯住中心,用余光找数字。5×5 在 30 秒内完成算优秀。</p>
   <div class="bar">
-    <div class="grp" role="group" aria-label="閫夋嫨鏂规牸澶у皬">
-      <button data-size="3">3脳3</button>
-      <button data-size="4">4脳4</button>
-      <button data-size="5" aria-pressed="true">5脳5</button>
+    <div class="grp" role="group" aria-label="选择方格大小">
+      <button data-size="3">3×3</button>
+      <button data-size="4">4×4</button>
+      <button data-size="5" aria-pressed="true">5×5</button>
     </div>
-    <button id="s-reset">閲嶆柊鎵撲贡</button>
-    <span class="meta">鐢ㄦ椂 <b id="s-time">0.0</b> 绉?路 鏈€浣?<b id="s-best">鈥?/b></span>
+    <button id="s-reset">重新打乱</button>
+    <span class="meta">用时 <b id="s-time">0.0</b> 秒 · 最佳 <b id="s-best">—</b></span>
   </div>
-  <div id="grid" aria-label="鑸掑皵鐗规柟鏍?></div>
+  <div id="grid" aria-label="舒尔特方格"></div>
   <p id="s-msg"></p>
 </section>
 
 <section id="stroop">
-  <div class="sec-head"><span class="sec-num">03</span><h2>Stroop 鑹茶瘝娴嬭瘯</h2></div>
-  <p class="sec-desc">30 绉掗檺鏃?蹇界暐瀛楃殑鍚箟,鍙湅瀛楃殑<b>棰滆壊</b>,鐐瑰搴旀寜閽€傛瘮濡傜豢鑹茬殑銆岀孩銆嶅瓧,姝ｇ‘绛旀鏄€岀豢銆嶃€備笓娌诲ぇ鑴戣嚜鍔ㄩ┚椹躲€?/p>
+  <div class="sec-head"><span class="sec-num">03</span><h2>Stroop 色词测试</h2></div>
+  <p class="sec-desc">30 秒限时:忽略字的含义,只看字的<b>颜色</b>,点对应按钮。比如绿色的「红」字,正确答案是「绿」。专治大脑自动驾驶。</p>
   <div class="bar">
-    <button id="st-start">寮€濮?30 绉?/button>
-    <span class="meta">鏈€浣?<b id="st-best">鈥?/b> 棰?/span>
+    <button id="st-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="st-best">—</b> 题</span>
   </div>
   <div class="stage" id="st-stage">
     <span id="st-hud"></span>
-    <p id="st-msg">鐐广€屽紑濮嬨€?鐒跺悗鎵嬮€熻窡涓婅剳閫熴€?/p>
+    <p id="st-msg">点「开始」,然后手速跟上脑速。</p>
     <div id="st-word" style="display:none"></div>
   </div>
   <div class="st-answers">
-    <button data-c="0"><span class="dot" style="background:var(--stop)"></span>绾?kbd>1</kbd></button>
-    <button data-c="1"><span class="dot" style="background:var(--go)"></span>缁?kbd>2</kbd></button>
-    <button data-c="2"><span class="dot" style="background:var(--blue)"></span>钃?kbd>3</kbd></button>
-    <button data-c="3"><span class="dot" style="background:var(--wait)"></span>榛?kbd>4</kbd></button>
+    <button data-c="0"><span class="dot" style="background:var(--stop)"></span>红<kbd>1</kbd></button>
+    <button data-c="1"><span class="dot" style="background:var(--go)"></span>绿<kbd>2</kbd></button>
+    <button data-c="2"><span class="dot" style="background:var(--blue)"></span>蓝<kbd>3</kbd></button>
+    <button data-c="3"><span class="dot" style="background:var(--wait)"></span>黄<kbd>4</kbd></button>
   </div>
   <p class="grade" id="st-grade"></p>
 </section>
 
 <section id="memory">
-  <div class="sec-head"><span class="sec-num">04</span><h2>鏁板瓧璁板繂骞垮害</h2></div>
-  <p class="sec-desc">鏁板瓧閫愪釜闂幇,娑堝け鍚庡嚟璁板繂杈撳叆銆傜瓟瀵逛竴杞姞涓€浣?绛旈敊缁撴潫銆傛櫘閫氫汉鑳借 7卤2 浣?浣犲憿?</p>
+  <div class="sec-head"><span class="sec-num">04</span><h2>数字记忆广度</h2></div>
+  <p class="sec-desc">数字逐个闪现,消失后凭记忆输入。答对一轮加一位,答错结束。普通人能记 7±2 位,你呢?</p>
   <div class="bar">
-    <button id="m-start">寮€濮嬫寫鎴?/button>
-    <span class="meta">褰撳墠 <b id="m-len">鈥?/b> 浣?路 鏈€浣?<b id="m-best">鈥?/b> 浣?/span>
+    <button id="m-start">开始挑战</button>
+    <span class="meta">当前 <b id="m-len">—</b> 位 · 最佳 <b id="m-best">—</b> 位</span>
   </div>
   <div class="stage" id="m-stage">
-    <p id="m-msg">浠?3 浣嶆暟瀛楀紑濮?涓€璺線涓婂姞銆?/p>
+    <p id="m-msg">从 3 位数字开始,一路往上加。</p>
     <div id="m-digits" style="display:none"></div>
     <div id="m-input-row">
-      <input type="text" id="m-input" inputmode="numeric" autocomplete="off" aria-label="杈撳叆鍒氭墠鐨勬暟瀛?>
-      <button id="m-submit">纭</button>
+      <input type="text" id="m-input" inputmode="numeric" autocomplete="off" aria-label="输入刚才的数字">
+      <button id="m-submit">确认</button>
     </div>
   </div>
 </section>
 
 <section id="aim">
-  <div class="sec-head"><span class="sec-num">05</span><h2>闄愭椂鎵撻澏</h2></div>
-  <p class="sec-desc">30 绉掑唴鐐逛腑灏藉彲鑳藉鐨勯澏瀛?鐐圭┖绠楀け璇€傜粌鎵嬬溂鍗忚皟,涔熼『渚挎椿鍔ㄤ竴涓嬮紶鏍囨墜銆?/p>
+  <div class="sec-head"><span class="sec-num">05</span><h2>限时打靶</h2></div>
+  <p class="sec-desc">30 秒内点中尽可能多的靶子,点空算失误。练手眼协调,也顺便活动一下鼠标手。</p>
   <div class="bar">
-    <button id="aim-start">寮€濮?30 绉?/button>
-    <span class="meta">鏈€浣?<b id="aim-best">鈥?/b> 涓?/span>
+    <button id="aim-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="aim-best">—</b> 中</span>
   </div>
   <div class="stage" id="aim-stage">
     <span id="aim-hud"></span>
-    <p id="aim-msg">闈跺瓙浼氶殢鏈哄嚭鐜?鐪嬪埌灏辩偣銆?/p>
+    <p id="aim-msg">靶子会随机出现,看到就点。</p>
     <div id="aim-target" aria-hidden="true"></div>
   </div>
   <p class="grade" id="aim-grade"></p>
 </section>
 
 <section id="simon">
-  <div class="sec-head"><span class="sec-num">06</span><h2>搴忓垪璁板繂</h2></div>
-  <p class="sec-desc">鍥涗釜鑹插潡浼氭寜椤哄簭渚濇浜捣,鐪嬪畬鍑蹇嗙偣鍑哄悓鏍风殑椤哄簭銆傛瘡绛斿涓€杞?搴忓垪鍔犻暱涓€浣嶃€?/p>
+  <div class="sec-head"><span class="sec-num">06</span><h2>序列记忆</h2></div>
+  <p class="sec-desc">四个色块会按顺序依次亮起,看完凭记忆点出同样的顺序。每答对一轮,序列加长一位。</p>
   <div class="bar">
-    <button id="sim-start">寮€濮?/button>
-    <span class="meta">褰撳墠 <b id="sim-round">鈥?/b> 浣?路 鏈€浣?<b id="sim-best">鈥?/b> 浣?/span>
+    <button id="sim-start">开始</button>
+    <span class="meta">当前 <b id="sim-round">—</b> 位 · 最佳 <b id="sim-best">—</b> 位</span>
   </div>
-  <div id="sim-grid" aria-label="搴忓垪璁板繂鑹插潡">
-    <button data-i="0" style="background:var(--stop)" aria-label="绾㈣壊鍧?></button>
-    <button data-i="1" style="background:var(--go)" aria-label="缁胯壊鍧?></button>
-    <button data-i="2" style="background:var(--blue)" aria-label="钃濊壊鍧?></button>
-    <button data-i="3" style="background:var(--wait)" aria-label="榛勮壊鍧?></button>
+  <div id="sim-grid" aria-label="序列记忆色块">
+    <button data-i="0" style="background:var(--stop)" aria-label="红色块"></button>
+    <button data-i="1" style="background:var(--go)" aria-label="绿色块"></button>
+    <button data-i="2" style="background:var(--blue)" aria-label="蓝色块"></button>
+    <button data-i="3" style="background:var(--wait)" aria-label="黄色块"></button>
   </div>
-  <p class="grade" id="sim-msg">鐪嬪畠浜?鍐嶇収鐫€鐐广€?/p>
+  <p class="grade" id="sim-msg">看它亮,再照着点。</p>
 </section>
 
 <section id="odd">
-  <div class="sec-head"><span class="sec-num">07</span><h2>鐏溂閲戠潧</h2></div>
-  <p class="sec-desc">30 绉掗檺鏃?鏂归樀閲屾湁涓€鍧楃殑棰滆壊鍜屽叾浠栦笉涓€鏍?鎶婂畠鎵惧嚭鏉ャ€傝秺寰€鍚庢柟闃佃秺澶с€佽壊宸秺灏忋€?/p>
+  <div class="sec-head"><span class="sec-num">07</span><h2>火眼金睛</h2></div>
+  <p class="sec-desc">30 秒限时:方阵里有一块的颜色和其他不一样,把它找出来。越往后方阵越大、色差越小。</p>
   <div class="bar">
-    <button id="od-start">寮€濮?30 绉?/button>
-    <span class="meta">鏈€浣?<b id="od-best">鈥?/b> 鍏?/span>
+    <button id="od-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="od-best">—</b> 关</span>
   </div>
   <div class="stage" id="od-stage">
     <span id="od-hud"></span>
-    <p id="od-msg">鑰冮獙鑹插僵鏁忔劅搴︾殑鏃跺€欏埌浜嗐€?/p>
+    <p id="od-msg">考验色彩敏感度的时候到了。</p>
     <div id="od-grid" style="display:none"></div>
   </div>
   <p class="grade" id="od-grade"></p>
 </section>
 
 <section id="math">
-  <div class="sec-head"><span class="sec-num">08</span><h2>蹇冪畻鍐插埡</h2></div>
-  <p class="sec-desc">30 绉掗檺鏃跺洓鍒欒繍绠?鍦ㄥ洓涓€夐」閲岀偣鍑烘纭瓟妗?閿洏 1鈥? 涔熻銆傚埆寮€璁＄畻鍣?缁冪殑灏辨槸浣犮€?/p>
+  <div class="sec-head"><span class="sec-num">08</span><h2>心算冲刺</h2></div>
+  <p class="sec-desc">30 秒限时四则运算,在四个选项里点出正确答案,键盘 1–4 也行。别开计算器,练的就是你。</p>
   <div class="bar">
-    <button id="mm-start">寮€濮?30 绉?/button>
-    <span class="meta">鏈€浣?<b id="mm-best">鈥?/b> 棰?/span>
+    <button id="mm-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="mm-best">—</b> 题</span>
   </div>
   <div class="stage" id="mm-stage" style="height:150px">
     <span id="mm-hud"></span>
-    <p id="mm-msg">鍙ｇ畻,鍚姩銆?/p>
+    <p id="mm-msg">口算,启动。</p>
     <div id="mm-q" style="display:none"></div>
   </div>
-  <div class="opts" id="mm-opts" role="group" aria-label="绛旀閫夐」">
-    <button data-i="0">鈥?/button><button data-i="1">鈥?/button><button data-i="2">鈥?/button><button data-i="3">鈥?/button>
+  <div class="opts" id="mm-opts" role="group" aria-label="答案选项">
+    <button data-i="0">—</button><button data-i="1">—</button><button data-i="2">—</button><button data-i="3">—</button>
   </div>
   <p class="grade" id="mm-grade"></p>
 </section>
 
 <section id="pairs">
-  <div class="sec-head"><span class="sec-num">09</span><h2>缈荤墝閰嶅</h2></div>
-  <p class="sec-desc">16 寮犵墝閲岃棌鐫€ 8 瀵瑰浘妗?缈讳袱寮?閰嶄笂瀵瑰氨鐣欎笅,閰嶄笉涓婂氨鐩栧洖鍘汇€傛鏁拌秺灏戙€佽秺蹇秺濂姐€?/p>
+  <div class="sec-head"><span class="sec-num">09</span><h2>翻牌配对</h2></div>
+  <p class="sec-desc">16 张牌里藏着 8 对图案:翻两张,配上对就留下,配不上就盖回去。步数越少、越快越好。</p>
   <div class="bar">
-    <button id="p-reset">閲嶆柊鍙戠墝</button>
-    <span class="meta">姝ユ暟 <b id="p-moves">0</b> 路 鐢ㄦ椂 <b id="p-time">0.0</b> 绉?路 鏈€蹇?<b id="p-best">鈥?/b></span>
+    <button id="p-reset">重新发牌</button>
+    <span class="meta">步数 <b id="p-moves">0</b> · 用时 <b id="p-time">0.0</b> 秒 · 最快 <b id="p-best">—</b></span>
   </div>
-  <div id="p-grid" aria-label="缈荤墝閰嶅"></div>
+  <div id="p-grid" aria-label="翻牌配对"></div>
   <p class="grade" id="p-msg"></p>
 </section>
 
 <section id="eyes">
-  <div class="sec-head"><span class="sec-num">10</span><h2>鎶ょ溂浼戞伅</h2></div>
-  <p class="sec-desc">20-20-20 娉曞垯:姣忓伐浣?20 鍒嗛挓,鐪?6 绫?20 鑻卞昂)澶栫殑涓滆タ 20 绉掋€傝拷韪缁冩椂鍙姩鐪肩潧,涓嶈鍔ㄥご銆?/p>
+  <div class="sec-head"><span class="sec-num">10</span><h2>护眼休息</h2></div>
+  <p class="sec-desc">20-20-20 法则:每工作 20 分钟,看 6 米(20 英尺)外的东西 20 秒。追踪训练时只动眼睛,不要动头。</p>
   <div class="e-btns">
-    <button id="e-far">寮€濮?20 绉掕繙鐪?/button>
-    <button id="e-track">鐪肩悆杩借釜 30 绉?/button>
-    <button id="e-stop">鍋滄</button>
+    <button id="e-far">开始 20 秒远眺</button>
+    <button id="e-track">眼球追踪 30 秒</button>
+    <button id="e-stop">停止</button>
   </div>
   <div class="stage" id="e-stage">
-    <p id="e-msg">閫変竴涓ā寮忓紑濮嬨€傝繙鐪烘椂璇风寮€灞忓箷,鏈涘悜绐楀鏈€杩滅殑鍦版柟銆?/p>
+    <p id="e-msg">选一个模式开始。远眺时请离开屏幕,望向窗外最远的地方。</p>
     <div id="ball" aria-hidden="true"></div>
   </div>
 </section>
 
 <footer>
-  <p><b>鍏充簬銆屽甫钖仴鑴戙€?/b>:绾潤鎬佸崟鏂囦欢缃戦〉,鏃犻渶鑱旂綉鍗冲彲浣跨敤;鎵€鏈夋垚缁╁彧淇濆瓨鍦ㄤ綘鑷繁娴忚鍣ㄧ殑鏈湴瀛樺偍閲?涓嶄細涓婁紶鍒颁换浣曞湴鏂广€傛斁蹇冩懜,澶ц儐鍋ャ€?/p>
-  <p>鍙傝€冨€?鍙嶅簲鏃堕棿鎴愬勾浜哄钩鍧囩害 200鈥?70 ms;鏁板瓧璁板繂骞垮害鏅€氫汉 5鈥? 浣?Stroop 娴嬭瘯閲屻€屽瓧涔夈€嶅拰銆屽瓧鑹层€嶅啿绐佹椂鍙樻參鏄甯哥幇璞?缁冪殑灏辨槸鍘嬩綇杩欎釜鏈兘銆?/p>
+  <p><b>关于「带薪健脑」</b>:纯静态单文件网页,无需联网即可使用;所有成绩只保存在你自己浏览器的本地存储里,不会上传到任何地方。放心摸,大胆健。</p>
+  <p>参考值:反应时间成年人平均约 200–270 ms;数字记忆广度普通人 5–9 位;Stroop 测试里「字义」和「字色」冲突时变慢是正常现象,练的就是压住这个本能。</p>
 </footer>
 
 </div>
@@ -420,7 +420,7 @@ function load(k,d){if(!LS_OK)return d;try{var v=localStorage.getItem(k);return v
 function save(k,v){if(!LS_OK)return;try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 function cssVar(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
 
-/* ---------- 01 鍙嶅簲鍔?---------- */
+/* ---------- 01 反应力 ---------- */
 var pad=document.getElementById("pad"),
     padMain=document.getElementById("pad-main"),
     padSub=document.getElementById("pad-sub"),
@@ -441,32 +441,32 @@ function rRender(){
   }
 }
 function gradeOf(ms){
-  if(ms<200)return"鈿?"+ms+" ms 鈥?鐢电珵绾у弽搴?浠婂ぉ鐘舵€佸緢鐚?;
-  if(ms<250)return ms+" ms 鈥?浼樼,鑴戝瓙鍦ㄧ嚎";
-  if(ms<320)return ms+" ms 鈥?姝ｅ父姘村钩,绋充綇";
-  return ms+" ms 鈥?鏈夌偣杩熼挐浜?璧锋潵鎺ユ澂姘村惂";
+  if(ms<200)return"⚡ "+ms+" ms — 电竞级反应,今天状态很猛";
+  if(ms<250)return ms+" ms — 优秀,脑子在线";
+  if(ms<320)return ms+" ms — 正常水平,稳住";
+  return ms+" ms — 有点迟钝了,起来接杯水吧";
 }
 function rGo(){
   if(rState==="idle"||rState==="result"||rState==="early"){
     rState="waiting";
     pad.className="wait";
-    padMain.className="";padMain.textContent="绛夊緟鍙樼豢鈥?;
-    padSub.textContent="鍙樼豢鐬棿绔嬪埢鐐瑰嚮";
+    padMain.className="";padMain.textContent="等待变绿…";
+    padSub.textContent="变绿瞬间立刻点击";
     rTO=setTimeout(function(){
       rState="ready";rT0=performance.now();
       pad.className="go";
-      padMain.textContent="鐐?";padSub.textContent="";
+      padMain.textContent="点!";padSub.textContent="";
     },1000+Math.random()*2600);
   }else if(rState==="waiting"){
     clearTimeout(rTO);rState="early";
     pad.className="early";
-    padMain.textContent="鎶㈣窇浜?;padSub.textContent="鐐瑰嚮鍐嶈瘯涓€娆?;
+    padMain.textContent="抢跑了";padSub.textContent="点击再试一次";
   }else if(rState==="ready"){
     var dt=Math.round(performance.now()-rT0);
     rState="result";
     pad.className="";
     padMain.className="num";padMain.textContent=dt+" ms";
-    padSub.textContent="鐐瑰嚮鍐嶆潵涓€娆?;
+    padSub.textContent="点击再来一次";
     rHist.push(dt);if(rHist.length>10)rHist=rHist.slice(-10);
     if(rBestVal===null||dt<rBestVal)rBestVal=dt;
     save("rt_hist",rHist);save("rt_best",rBestVal);
@@ -484,7 +484,7 @@ document.addEventListener("keydown",function(e){
 });
 rRender();
 
-/* ---------- 02 鑸掑皵鐗规柟鏍?---------- */
+/* ---------- 02 舒尔特方格 ---------- */
 var grid=document.getElementById("grid"),
     sTime=document.getElementById("s-time"),
     sBestEl=document.getElementById("s-best"),
@@ -495,7 +495,7 @@ var sBest=load("schulte_best",{});
 
 function sBestShow(){
   var b=sBest[sSize];
-  sBestEl.textContent=b?b.toFixed(1)+" 绉?:"鈥?;
+  sBestEl.textContent=b?b.toFixed(1)+" 秒":"—";
 }
 function sBuild(){
   clearInterval(sInt);sInt=null;sT0=null;sNext=1;
@@ -535,9 +535,9 @@ function sBuild(){
         sBestShow();
         var good=sSize===5?30:(sSize===4?18:8);
         sMsg.className="ok";
-        sMsg.textContent="瀹屾垚!"+sec.toFixed(1)+" 绉?
-          +(isBest?" 路 鏂扮邯褰?:"")
-          +(sec<=good?" 路 涓撴敞鍔涘湪绾?:" 路 澶氱粌鍑犳浼氭洿蹇?);
+        sMsg.textContent="完成!"+sec.toFixed(1)+" 秒"
+          +(isBest?" · 新纪录":"")
+          +(sec<=good?" · 专注力在线":" · 多练几次会更快");
       }
     });
     grid.appendChild(b);
@@ -554,7 +554,7 @@ sizeBtns.forEach(function(btn){
 document.getElementById("s-reset").addEventListener("click",sBuild);
 sBestShow();sBuild();
 
-/* ---------- 03 Stroop 鑹茶瘝 ---------- */
+/* ---------- 03 Stroop 色词 ---------- */
 var stStart=document.getElementById("st-start"),
     stWord=document.getElementById("st-word"),
     stMsg=document.getElementById("st-msg"),
@@ -562,7 +562,7 @@ var stStart=document.getElementById("st-start"),
     stGrade=document.getElementById("st-grade"),
     stBestEl=document.getElementById("st-best"),
     stBtns=document.querySelectorAll(".st-answers button");
-var ST_WORDS=["绾?,"缁?,"钃?,"榛?];
+var ST_WORDS=["红","绿","蓝","黄"];
 var stOn=false,stAns=-1,stOK=0,stAll=0,stEnd=0,stTick=null;
 var stBest=load("stroop_best",null);
 if(stBest!==null)stBestEl.textContent=stBest;
@@ -582,20 +582,20 @@ function stFinish(){
   var acc=stAll?Math.round(stOK/stAll*100):0;
   var isBest=stBest===null||stOK>stBest;
   if(isBest&&stAll>0){stBest=stOK;save("stroop_best",stBest);stBestEl.textContent=stBest;}
-  stMsg.innerHTML='<span class="big">'+stOK+' 棰?/span>姝ｇ‘鐜?'+acc+'%'+(isBest&&stAll>0?" 路 鏂扮邯褰?:"");
-  stGrade.textContent=stOK>=25?"鎶楀共鎵拌兘鍔涙媺婊?澶ц剳娌″湪鑷姩椹鹃┒":
-                      stOK>=18?"涓嶉敊,鍓嶉鍙堕啋鐫€鍛?:
-                      stAll>0?"瀛椾箟鐨勫共鎵颁笉灏忓惂?澶氱粌鍑犺疆灏遍『浜?:"";
+  stMsg.innerHTML='<span class="big">'+stOK+' 题</span>正确率 '+acc+'%'+(isBest&&stAll>0?" · 新纪录":"");
+  stGrade.textContent=stOK>=25?"抗干扰能力拉满,大脑没在自动驾驶":
+                      stOK>=18?"不错,前额叶醒着呢":
+                      stAll>0?"字义的干扰不小吧?多练几轮就顺了":"";
 }
 stStart.addEventListener("click",function(){
   stOn=true;stOK=0;stAll=0;stGrade.textContent="";
   stMsg.style.display="none";stWord.style.display="block";
   stEnd=performance.now()+30000;
-  stHud.textContent="30.0 s 路 0 瀵?;
+  stHud.textContent="30.0 s · 0 对";
   stTick=setInterval(function(){
     var left=(stEnd-performance.now())/1000;
     if(left<=0){stFinish();return;}
-    stHud.textContent=left.toFixed(1)+" s 路 "+stOK+" 瀵?;
+    stHud.textContent=left.toFixed(1)+" s · "+stOK+" 对";
   },100);
   stNext();
 });
@@ -614,7 +614,7 @@ document.addEventListener("keydown",function(e){
   if(i>-1){e.preventDefault();stPick(i);}
 });
 
-/* ---------- 04 鏁板瓧璁板繂骞垮害 ---------- */
+/* ---------- 04 数字记忆广度 ---------- */
 var mStart=document.getElementById("m-start"),
     mMsg=document.getElementById("m-msg"),
     mDigits=document.getElementById("m-digits"),
@@ -661,7 +661,7 @@ function mCheck(){
     mLen++;
     mPhase="gap";
     mShow(mMsg);
-    mMsg.innerHTML='<span class="ok">姝ｇ‘!</span>涓嬩竴杞?'+mLen+' 浣?鍑嗗鈥?;
+    mMsg.innerHTML='<span class="ok">正确!</span>下一轮 '+mLen+' 位,准备…';
     mTOs.push(setTimeout(mRound,1100));
   }else{
     mPhase="idle";
@@ -669,10 +669,10 @@ function mCheck(){
     var isBest=reached>=3&&(mBest===null||reached>mBest);
     if(isBest){mBest=reached;save("span_best",mBest);mBestEl.textContent=mBest;}
     mShow(mMsg);
-    mMsg.innerHTML='<span class="big">'+reached+' 浣?/span>姝ｇ‘绛旀鏄?'+mSeq
-      +(isBest?" 路 鏂扮邯褰?:"")
-      +(reached>=8?" 路 璁板繂鍔涙儕浜?:reached>=6?" 路 杈惧埌鏅€氫汉姘村钩绾夸互涓?:" 路 鍐嶆垬涓€灞€?");
-    mLenEl.textContent="鈥?;
+    mMsg.innerHTML='<span class="big">'+reached+' 位</span>正确答案是 '+mSeq
+      +(isBest?" · 新纪录":"")
+      +(reached>=8?" · 记忆力惊人":reached>=6?" · 达到普通人水平线以上":" · 再战一局?");
+    mLenEl.textContent="—";
   }
 }
 mStart.addEventListener("click",function(){
@@ -683,7 +683,7 @@ mInput.addEventListener("keydown",function(e){
   if(e.key==="Enter"){e.preventDefault();mCheck();}
 });
 
-/* ---------- 05 闄愭椂鎵撻澏 ---------- */
+/* ---------- 05 限时打靶 ---------- */
 var aimStart=document.getElementById("aim-start"),
     aimStage=document.getElementById("aim-stage"),
     aimTarget=document.getElementById("aim-target"),
@@ -708,21 +708,21 @@ function aimFinish(){
   var acc=total?Math.round(aimHits/total*100):0;
   var isBest=aimBest===null||aimHits>aimBest;
   if(isBest&&aimHits>0){aimBest=aimHits;save("aim_best",aimBest);aimBestEl.textContent=aimBest;}
-  aimMsg.innerHTML='<span class="big">'+aimHits+' 涓?/span>鍛戒腑鐜?'+acc+'%'+(isBest&&aimHits>0?" 路 鏂扮邯褰?:"");
-  aimGrade.textContent=aimHits>=40?"浜轰綋鑷瀯,寤鸿鍘绘墦鑱屼笟":
-                       aimHits>=28?"鎵嬬溂閰嶅悎寰堥『,榧犳爣鎵嬩粖澶╀笉閰?:
-                       aimHits>0?"鐑韩瀹屾瘯,鍐嶆潵涓€杞啿绾綍":"";
+  aimMsg.innerHTML='<span class="big">'+aimHits+' 中</span>命中率 '+acc+'%'+(isBest&&aimHits>0?" · 新纪录":"");
+  aimGrade.textContent=aimHits>=40?"人体自瞄,建议去打职业":
+                       aimHits>=28?"手眼配合很顺,鼠标手今天不酸":
+                       aimHits>0?"热身完毕,再来一轮冲纪录":"";
 }
 aimStart.addEventListener("click",function(){
   aimOn=true;aimHits=0;aimMiss=0;aimGrade.textContent="";
   aimMsg.style.display="none";aimTarget.style.display="block";
   aimEnd=performance.now()+30000;
-  aimHud.textContent="30.0 s 路 0 涓?;
+  aimHud.textContent="30.0 s · 0 中";
   aimPlace();
   aimTick=setInterval(function(){
     var left=(aimEnd-performance.now())/1000;
     if(left<=0){aimFinish();return;}
-    aimHud.textContent=left.toFixed(1)+" s 路 "+aimHits+" 涓?;
+    aimHud.textContent=left.toFixed(1)+" s · "+aimHits+" 中";
   },100);
 });
 aimTarget.addEventListener("pointerdown",function(e){
@@ -736,7 +736,7 @@ aimStage.addEventListener("pointerdown",function(e){
   aimMiss++;
 });
 
-/* ---------- 06 搴忓垪璁板繂 ---------- */
+/* ---------- 06 序列记忆 ---------- */
 var simTiles=document.querySelectorAll("#sim-grid button"),
     simStart=document.getElementById("sim-start"),
     simRound=document.getElementById("sim-round"),
@@ -754,13 +754,13 @@ function simFlash(i,d){
 function simPlay(){
   simPhase="show";
   simRound.textContent=simSeq.length;
-  simMsg.textContent="璁颁綇椤哄簭鈥?;
+  simMsg.textContent="记住顺序…";
   simSeq.forEach(function(v,idx){
     simTOs.push(setTimeout(function(){simFlash(v);},500+idx*620));
   });
   simTOs.push(setTimeout(function(){
     simPhase="input";simPos=0;
-    simMsg.textContent="杞埌浣犱簡";
+    simMsg.textContent="轮到你了";
   },500+simSeq.length*620));
 }
 simStart.addEventListener("click",function(){
@@ -777,7 +777,7 @@ simTiles.forEach(function(t){
       simPos++;
       if(simPos===simSeq.length){
         simPhase="gap";
-        simMsg.textContent="姝ｇ‘!涓嬩竴杞€?;
+        simMsg.textContent="正确!下一轮…";
         simTOs.push(setTimeout(function(){
           simSeq.push(Math.floor(Math.random()*4));
           simPlay();
@@ -788,14 +788,14 @@ simTiles.forEach(function(t){
       var score=simSeq.length-1;
       var isBest=score>0&&(simBest===null||score>simBest);
       if(isBest){simBest=score;save("simon_best",simBest);simBestEl.textContent=simBest;}
-      simMsg.textContent="姝㈡ "+score+" 浣?+(isBest?" 路 鏂扮邯褰?:"")
-        +(score>=8?" 路 椤哄簭璁板繂寰堣兘鎵?:score>=5?" 路 姝ｅ父鍙戞尌,鍐嶆潵涓€灞€":" 路 鐑韩灞€,涓嶇畻");
-      simRound.textContent="鈥?;
+      simMsg.textContent="止步 "+score+" 位"+(isBest?" · 新纪录":"")
+        +(score>=8?" · 顺序记忆很能打":score>=5?" · 正常发挥,再来一局":" · 热身局,不算");
+      simRound.textContent="—";
     }
   });
 });
 
-/* ---------- 07 鐏溂閲戠潧 ---------- */
+/* ---------- 07 火眼金睛 ---------- */
 var odStart=document.getElementById("od-start"),
     odStage=document.getElementById("od-stage"),
     odGrid=document.getElementById("od-grid"),
@@ -825,7 +825,7 @@ function odBuild(){
       var b=document.createElement("button");
       var l=idx===oddIdx?light+sign*delta:light;
       b.style.background="hsl("+hue+" "+sat+"% "+l+"%)";
-      b.setAttribute("aria-label",idx===oddIdx?"涓嶅悓鐨勮壊鍧?:"鑹插潡");
+      b.setAttribute("aria-label",idx===oddIdx?"不同的色块":"色块");
       b.addEventListener("pointerdown",function(e){
         if(!odOn)return;
         e.preventDefault();
@@ -845,25 +845,25 @@ function odFinish(){
   var cleared=odLvl-1;
   var isBest=cleared>0&&(odBest===null||cleared>odBest);
   if(isBest){odBest=cleared;save("odd_best",odBest);odBestEl.textContent=odBest;}
-  odMsg.innerHTML='<span class="big">'+cleared+' 鍏?/span>'+(isBest?"鏂扮邯褰?:"鏃堕棿鍒?);
-  odGrade.textContent=cleared>=14?"鍍忕礌鐪艰璇?璁捐甯堢湅浜嗛兘鐐瑰ご":
-                      cleared>=9?"鑹插僵鏁忔劅搴﹀湪绾?:
-                      cleared>0?"鍚庨潰鑹插樊寰堝皬,姝ｅ父,澶氱粌":"";
+  odMsg.innerHTML='<span class="big">'+cleared+' 关</span>'+(isBest?"新纪录":"时间到");
+  odGrade.textContent=cleared>=14?"像素眼认证,设计师看了都点头":
+                      cleared>=9?"色彩敏感度在线":
+                      cleared>0?"后面色差很小,正常,多练":"";
 }
 odStart.addEventListener("click",function(){
   odOn=true;odLvl=1;odGrade.textContent="";
   odMsg.style.display="none";odGrid.style.display="grid";
   odEnd=performance.now()+30000;
-  odHud.textContent="30.0 s 路 绗?1 鍏?;
+  odHud.textContent="30.0 s · 第 1 关";
   odTick=setInterval(function(){
     var left=(odEnd-performance.now())/1000;
     if(left<=0){odFinish();return;}
-    odHud.textContent=left.toFixed(1)+" s 路 绗?"+odLvl+" 鍏?;
+    odHud.textContent=left.toFixed(1)+" s · 第 "+odLvl+" 关";
   },100);
   odBuild();
 });
 
-/* ---------- 08 蹇冪畻鍐插埡 ---------- */
+/* ---------- 08 心算冲刺 ---------- */
 var mmStart=document.getElementById("mm-start"),
     mmQ=document.getElementById("mm-q"),
     mmMsg=document.getElementById("mm-msg"),
@@ -879,8 +879,8 @@ function ri(a,b){return a+Math.floor(Math.random()*(b-a+1));}
 function mmNext(){
   var op=Math.floor(Math.random()*3),a,b,ans,txt;
   if(op===0){a=ri(6,59);b=ri(6,59);ans=a+b;txt=a+" + "+b;}
-  else if(op===1){a=ri(15,89);b=ri(4,a-3);ans=a-b;txt=a+" 鈭?"+b;}
-  else{a=ri(3,12);b=ri(3,12);ans=a*b;txt=a+" 脳 "+b;}
+  else if(op===1){a=ri(15,89);b=ri(4,a-3);ans=a-b;txt=a+" − "+b;}
+  else{a=ri(3,12);b=ri(3,12);ans=a*b;txt=a+" × "+b;}
   mmAns=ans;
   mmQ.textContent=txt+" = ?";
   var opts=[ans],guard=0;
@@ -897,24 +897,24 @@ function mmNext(){
 function mmFinish(){
   mmOn=false;clearInterval(mmTick);mmTick=null;
   mmQ.style.display="none";mmMsg.style.display="block";mmHud.textContent="";
-  mmBtns.forEach(function(btn){btn.textContent="鈥?;});
+  mmBtns.forEach(function(btn){btn.textContent="—";});
   var acc=mmAll?Math.round(mmOK/mmAll*100):0;
   var isBest=mmAll>0&&(mmBest===null||mmOK>mmBest);
   if(isBest){mmBest=mmOK;save("math_best",mmBest);mmBestEl.textContent=mmBest;}
-  mmMsg.innerHTML='<span class="big">'+mmOK+' 棰?/span>姝ｇ‘鐜?'+acc+'%'+(isBest?" 路 鏂扮邯褰?:"");
-  mmGrade.textContent=mmOK>=18?"蹇冪畻寮曟搸婊¤浆,鎶ラ攢鍗曞彲浠ュ彛绠椾簡":
-                      mmOK>=12?"涓嶉敊,鏁板瓧鑴戦啋鐫€":
-                      mmAll>0?"鎱㈠嵆鏄ǔ,鍏堜繚姝ｇ‘鐜囧啀鎻愰€?:"";
+  mmMsg.innerHTML='<span class="big">'+mmOK+' 题</span>正确率 '+acc+'%'+(isBest?" · 新纪录":"");
+  mmGrade.textContent=mmOK>=18?"心算引擎满转,报销单可以口算了":
+                      mmOK>=12?"不错,数字脑醒着":
+                      mmAll>0?"慢即是稳,先保正确率再提速":"";
 }
 mmStart.addEventListener("click",function(){
   mmOn=true;mmOK=0;mmAll=0;mmGrade.textContent="";
   mmMsg.style.display="none";mmQ.style.display="block";
   mmEnd=performance.now()+30000;
-  mmHud.textContent="30.0 s 路 0 瀵?;
+  mmHud.textContent="30.0 s · 0 对";
   mmTick=setInterval(function(){
     var left=(mmEnd-performance.now())/1000;
     if(left<=0){mmFinish();return;}
-    mmHud.textContent=left.toFixed(1)+" s 路 "+mmOK+" 瀵?;
+    mmHud.textContent=left.toFixed(1)+" s · "+mmOK+" 对";
   },100);
   mmNext();
 });
@@ -933,16 +933,16 @@ document.addEventListener("keydown",function(e){
   if(i>-1){e.preventDefault();mmPick(i);}
 });
 
-/* ---------- 09 缈荤墝閰嶅 ---------- */
+/* ---------- 09 翻牌配对 ---------- */
 var pGrid=document.getElementById("p-grid"),
     pMovesEl=document.getElementById("p-moves"),
     pTimeEl=document.getElementById("p-time"),
     pBestEl=document.getElementById("p-best"),
     pMsg=document.getElementById("p-msg");
-var P_SYMS=["馃崁","馃寵","鈿?,"馃崕","馃帶","馃殌","馃悷","馃敟"];
+var P_SYMS=["🍀","🌙","⚡","🍎","🎧","🚀","🐟","🔥"];
 var pFirst=null,pLock=false,pMoves=0,pMatched=0,pT0=null,pInt=null;
 var pBest=load("pairs_best",null);
-if(pBest!==null)pBestEl.textContent=pBest.toFixed(1)+" 绉?;
+if(pBest!==null)pBestEl.textContent=pBest.toFixed(1)+" 秒";
 
 function pBuild(){
   clearInterval(pInt);pInt=null;pT0=null;
@@ -958,7 +958,7 @@ function pBuild(){
     var b=document.createElement("button");
     b.dataset.sym=sym;
     b.innerHTML='<span class="q">?</span>';
-    b.setAttribute("aria-label","鐩栫潃鐨勭墝");
+    b.setAttribute("aria-label","盖着的牌");
     b.addEventListener("click",function(){
       if(pLock||b===pFirst||b.classList.contains("hit"))return;
       if(!pT0){
@@ -980,11 +980,11 @@ function pBuild(){
           var sec=(performance.now()-pT0)/1000;
           pTimeEl.textContent=sec.toFixed(1);
           var isBest=pBest===null||sec<pBest;
-          if(isBest){pBest=Math.round(sec*10)/10;save("pairs_best",pBest);pBestEl.textContent=pBest.toFixed(1)+" 绉?;}
+          if(isBest){pBest=Math.round(sec*10)/10;save("pairs_best",pBest);pBestEl.textContent=pBest.toFixed(1)+" 秒";}
           pMsg.className="grade";
-          pMsg.textContent="瀹屾垚!"+pMoves+" 姝?路 "+sec.toFixed(1)+" 绉?
-            +(isBest?" 路 鏂扮邯褰?:"")
-            +(pMoves<=12?" 路 璁板繂瀹浣忔埛":pMoves<=18?" 路 鐭椂璁板繂鍦ㄧ嚎":" 路 鍐嶆潵涓€灞€缁冪粌");
+          pMsg.textContent="完成!"+pMoves+" 步 · "+sec.toFixed(1)+" 秒"
+            +(isBest?" · 新纪录":"")
+            +(pMoves<=12?" · 记忆宫殿住户":pMoves<=18?" · 短时记忆在线":" · 再来一局练练");
         }
       }else{
         pLock=true;
@@ -1001,7 +1001,7 @@ function pBuild(){
 document.getElementById("p-reset").addEventListener("click",pBuild);
 pBuild();
 
-/* ---------- 10 鎶ょ溂浼戞伅 ---------- */
+/* ---------- 10 护眼休息 ---------- */
 var eStage=document.getElementById("e-stage"),
     eMsg=document.getElementById("e-msg"),
     ball=document.getElementById("ball");
@@ -1017,12 +1017,12 @@ document.getElementById("e-far").addEventListener("click",function(){
   eStop();
   var left=20;
   function tick(){
-    eMsg.innerHTML='<span class="big">'+left+'</span>鏈涘悜 6 绫冲,璁╃潾鐘惰倢鏀炬澗';
+    eMsg.innerHTML='<span class="big">'+left+'</span>望向 6 米外,让睫状肌放松';
   }
   tick();
   eInt=setInterval(function(){
     left--;
-    if(left<=0){eStop('<span class="ok">鐪肩潧鍏呭ソ鐢典簡,缁х画鎼爾</span>');return;}
+    if(left<=0){eStop('<span class="ok">眼睛充好电了,继续搬砖</span>');return;}
     tick();
   },1000);
 });
@@ -1033,7 +1033,7 @@ document.getElementById("e-track").addEventListener("click",function(){
   var t0=performance.now();
   function step(now){
     var t=(now-t0)/1000;
-    if(t>=30){eStop('<span class="ok">杩借釜瀹屾垚,闂溂鐪ㄧ溂鍚勪笁娆?/span>');return;}
+    if(t>=30){eStop('<span class="ok">追踪完成,闭眼眨眼各三次</span>');return;}
     var W=eStage.clientWidth,H=eStage.clientHeight,a=t*0.9;
     var x=W/2+(W/2-32)*Math.sin(a);
     var y=H/2+(H/2-28)*Math.sin(a*2)*0.82;
@@ -1044,7 +1044,7 @@ document.getElementById("e-track").addEventListener("click",function(){
   eRAF=requestAnimationFrame(step);
 });
 document.getElementById("e-stop").addEventListener("click",function(){
-  eStop("閫変竴涓ā寮忓紑濮嬨€傝繙鐪烘椂璇风寮€灞忓箷,鏈涘悜绐楀鏈€杩滅殑鍦版柟銆?);
+  eStop("选一个模式开始。远眺时请离开屏幕,望向窗外最远的地方。");
 });
 })();
 </script>
