@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>带薪健脑 · 摸鱼摸出竞争力</title>
+<meta name="description" content="带薪健脑:打工人的脑力课间操。反应力、舒尔特方格、Stroop 色词、数字记忆、限时打靶、序列记忆、辨色、心算、翻牌配对,外加 20-20-20 护眼。摸鱼摸出竞争力。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F2;
+  --card:#FFFFFF;
+  --ink:#1C2422;
+  --ink-2:#5C6662;
+  --ink-3:#98A29D;
+  --line:#E2E7E2;
+  --go:#159A5F;
+  --go-soft:#DFF3E8;
+  --wait:#E8A23B;
+  --wait-soft:#FBEFD9;
+  --stop:#DE5A40;
+  --stop-soft:#FAE4DE;
+  --blue:#3E7BC0;
+  --blue-soft:#E2EDF8;
+  --radius:14px;
+  --mono:'DM Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#161A18;
+    --card:#1F2523;
+    --ink:#EDF1EE;
+    --ink-2:#A7B1AB;
+    --ink-3:#6E7873;
+    --line:#313A36;
+    --go:#2FBE7E;
+    --go-soft:#153B2A;
+    --wait:#E8A23B;
+    --wait-soft:#3D2F14;
+    --stop:#E9765D;
+    --stop-soft:#42221A;
+    --blue:#6AA3DC;
+    --blue-soft:#1B2C40;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  line-height:1.7;
+  padding:0 16px 64px;
+}
+.wrap{max-width:680px;margin:0 auto}
+header{padding:44px 0 8px}
+.signal{display:inline-flex;gap:7px;margin-bottom:14px}
+.signal span{width:12px;height:12px;border-radius:50%}
+.signal .a{background:var(--wait)}
+.signal .b{background:var(--go)}
+.signal .c{background:var(--stop)}
+h1{font-size:26px;font-weight:600;letter-spacing:.02em}
+.tagline{color:var(--ink-2);font-size:14.5px;margin-top:4px}
+nav{display:flex;gap:8px;margin:22px 0 28px;flex-wrap:wrap}
+nav a{
+  text-decoration:none;color:var(--ink-2);font-size:13.5px;
+  border:1px solid var(--line);border-radius:999px;padding:6px 14px;
+  background:var(--card);transition:border-color .15s,color .15s;
+}
+nav a:hover{border-color:var(--ink-3);color:var(--ink)}
+section{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px 24px;margin-bottom:18px;scroll-margin-top:16px;
+}
+.sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
+.sec-num{font-family:var(--mono);font-size:13px;color:var(--ink-3)}
+h2{font-size:18px;font-weight:600}
+.sec-desc{color:var(--ink-2);font-size:13.5px;margin:2px 0 16px}
+button{
+  font:inherit;font-size:14px;color:var(--ink);
+  background:transparent;border:1px solid var(--line);border-radius:9px;
+  padding:8px 16px;cursor:pointer;transition:background .15s,border-color .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+button:hover{background:var(--bg);border-color:var(--ink-3)}
+button:active{transform:scale(.98)}
+button:focus-visible,#pad:focus-visible{outline:2px solid var(--go);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--go-soft);border-color:var(--go);color:var(--go)}
+input[type=text]{
+  font:inherit;font-family:var(--mono);font-size:18px;letter-spacing:.2em;
+  color:var(--ink);background:var(--card);border:1px solid var(--line);
+  border-radius:9px;padding:8px 14px;width:200px;max-width:60vw;text-align:center;
+}
+input[type=text]:focus{outline:2px solid var(--go);outline-offset:1px;border-color:var(--go)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--bg);border-radius:10px;padding:10px 14px}
+.stat b{display:block;font-family:var(--mono);font-size:22px;font-weight:500;margin-top:1px}
+.stat i{font-style:normal;font-size:12px;color:var(--ink-3)}
+.grade{font-size:13.5px;margin-top:12px;color:var(--ink-2);min-height:1.4em}
+.stage{
+  position:relative;border-radius:11px;background:var(--bg);
+  border:1px solid var(--line);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;overflow:hidden;text-align:center;
+  user-select:none;-webkit-user-select:none;
+}
+.stage p{font-size:14.5px;color:var(--ink-2);padding:0 20px}
+.stage .big{font-family:var(--mono);font-size:52px;font-weight:500;color:var(--ink);display:block;line-height:1.2}
+.stage .ok{color:var(--go);font-weight:600}
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.bar .meta{font-size:13.5px;color:var(--ink-2);margin-left:auto}
+.bar .meta b{font-family:var(--mono);font-weight:500;color:var(--ink)}
+.grp{display:flex;gap:6px}
+
+#pad{
+  height:200px;border-radius:11px;background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;
+  border:1px solid var(--line);transition:background .1s;
+}
+#pad.wait{background:var(--wait-soft);border-color:var(--wait)}
+#pad.go{background:var(--go-soft);border-color:var(--go)}
+#pad.early{background:var(--stop-soft);border-color:var(--stop)}
+#pad-main{font-size:20px;font-weight:600}
+#pad-main.num{font-family:var(--mono);font-size:44px;font-weight:500}
+#pad-sub{font-size:13px;color:var(--ink-2);margin-top:6px}
+
+#grid{display:grid;gap:8px}
+#grid button{
+  aspect-ratio:1;padding:0;font-family:var(--mono);font-size:19px;font-weight:500;
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+}
+#grid button.done{background:var(--go-soft);border-color:transparent;color:var(--go);cursor:default}
+#grid button.wrong{border-color:var(--stop);color:var(--stop)}
+#s-msg{font-size:14px;margin-top:12px;min-height:1.5em}
+#s-msg.ok{color:var(--go)}
+
+#st-stage{height:180px}
+#st-word{font-size:64px;font-weight:700;line-height:1.1}
+#st-hud{position:absolute;top:10px;right:14px;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+.st-answers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.st-answers button{padding:10px 0;font-size:15px}
+.st-answers .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.st-answers kbd{
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-left:6px;
+}
+
+#m-stage{height:170px}
+#m-digits{font-family:var(--mono);font-size:56px;font-weight:500;letter-spacing:.15em}
+#m-input-row{display:none;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+
+#aim-stage{height:260px;cursor:crosshair}
+#aim-target{
+  position:absolute;width:46px;height:46px;border-radius:50%;
+  background:var(--go);display:none;cursor:pointer;
+  box-shadow:inset 0 0 0 8px var(--go-soft);
+}
+#aim-hud{position:absolute;top:10px;right:14px;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+
+#ball{position:absolute;width:24px;height:24px;border-radius:50%;background:var(--go);display:none}
+.e-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+#e-stage{height:190px}
+
+#sim-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:270px}
+#sim-grid button{aspect-ratio:1;border:none;border-radius:12px;opacity:.4;transition:opacity .12s,transform .12s;padding:0}
+#sim-grid button:hover{opacity:.6}
+#sim-grid button.lit{opacity:1;transform:scale(1.04)}
+
+#od-stage{height:auto;min-height:240px;padding:18px 0}
+#od-hud,#mm-hud{position:absolute;top:10px;right:14px;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+#od-grid{display:grid;gap:6px;width:100%;padding:0 8px}
+#od-grid button{aspect-ratio:1;border:none;border-radius:8px;padding:0;transition:opacity .12s}
+#od-grid button.oops{opacity:.35}
+
+.opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+.opts button{padding:10px 0;font-size:17px;font-family:var(--mono)}
+#mm-q{font-family:var(--mono);font-size:46px;font-weight:500}
+
+#p-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:340px}
+#p-grid button{aspect-ratio:1;padding:0;font-size:26px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+#p-grid button .q{font-family:var(--mono);font-size:17px;color:var(--ink-3)}
+#p-grid button.flip{background:var(--card);border-color:var(--ink-3)}
+#p-grid button.hit{background:var(--go-soft);border-color:transparent;cursor:default}
+
+footer{color:var(--ink-3);font-size:12.5px;margin-top:28px;line-height:1.8}
+footer b{color:var(--ink-2);font-weight:600}
+@media (max-width:480px){
+  header{padding-top:32px}
+  h1{font-size:22px}
+  section{padding:18px 16px 20px}
+  #pad{height:170px}
+  #st-word{font-size:52px}
+  .bar .meta{margin-left:0;width:100%}
+  .st-answers kbd{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  button:active{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="signal" aria-hidden="true"><span class="a"></span><span class="b"></span><span class="c"></span></div>
+  <h1>带薪健脑</h1>
+  <p class="tagline">摸鱼摸出竞争力——九个小训练,唤醒反应、专注、记忆和手速,再给眼睛放个假。</p>
+  <nav>
+    <a href="#reaction">反应力</a>
+    <a href="#schulte">舒尔特</a>
+    <a href="#stroop">色词</a>
+    <a href="#memory">记忆</a>
+    <a href="#aim">打靶</a>
+    <a href="#simon">序列</a>
+    <a href="#odd">辨色</a>
+    <a href="#math">心算</a>
+    <a href="#pairs">翻牌</a>
+    <a href="#eyes">护眼</a>
+  </nav>
+</header>
+
+<section id="reaction">
+  <div class="sec-head"><span class="sec-num">01</span><h2>反应力测试</h2></div>
+  <p class="sec-desc">点击下方区域开始,等它变绿的瞬间再点一下。变绿前点了算抢跑。</p>
+  <div id="pad" role="button" tabindex="0" aria-label="反应力测试区,点击或按空格开始">
+    <div id="pad-main">点击开始</div>
+    <div id="pad-sub">也可以按空格键</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><i>本次</i><b id="r-last">—</b></div>
+    <div class="stat"><i>最快</i><b id="r-best">—</b></div>
+    <div class="stat"><i>平均(近 10 次)</i><b id="r-avg">—</b></div>
+  </div>
+  <p class="grade" id="r-grade"></p>
+</section>
+
+<section id="schulte">
+  <div class="sec-head"><span class="sec-num">02</span><h2>舒尔特方格</h2></div>
+  <p class="sec-desc">按 1 到 N 的顺序依次点击。诀窍:眼睛盯住中心,用余光找数字。5×5 在 30 秒内完成算优秀。</p>
+  <div class="bar">
+    <div class="grp" role="group" aria-label="选择方格大小">
+      <button data-size="3">3×3</button>
+      <button data-size="4">4×4</button>
+      <button data-size="5" aria-pressed="true">5×5</button>
+    </div>
+    <button id="s-reset">重新打乱</button>
+    <span class="meta">用时 <b id="s-time">0.0</b> 秒 · 最佳 <b id="s-best">—</b></span>
+  </div>
+  <div id="grid" aria-label="舒尔特方格"></div>
+  <p id="s-msg"></p>
+</section>
+
+<section id="stroop">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Stroop 色词测试</h2></div>
+  <p class="sec-desc">30 秒限时:忽略字的含义,只看字的<b>颜色</b>,点对应按钮。比如绿色的「红」字,正确答案是「绿」。专治大脑自动驾驶。</p>
+  <div class="bar">
+    <button id="st-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="st-best">—</b> 题</span>
+  </div>
+  <div class="stage" id="st-stage">
+    <span id="st-hud"></span>
+    <p id="st-msg">点「开始」,然后手速跟上脑速。</p>
+    <div id="st-word" style="display:none"></div>
+  </div>
+  <div class="st-answers">
+    <button data-c="0"><span class="dot" style="background:var(--stop)"></span>红<kbd>1</kbd></button>
+    <button data-c="1"><span class="dot" style="background:var(--go)"></span>绿<kbd>2</kbd></button>
+    <button data-c="2"><span class="dot" style="background:var(--blue)"></span>蓝<kbd>3</kbd></button>
+    <button data-c="3"><span class="dot" style="background:var(--wait)"></span>黄<kbd>4</kbd></button>
+  </div>
+  <p class="grade" id="st-grade"></p>
+</section>
+
+<section id="memory">
+  <div class="sec-head"><span class="sec-num">04</span><h2>数字记忆广度</h2></div>
+  <p class="sec-desc">数字逐个闪现,消失后凭记忆输入。答对一轮加一位,答错结束。普通人能记 7±2 位,你呢?</p>
+  <div class="bar">
+    <button id="m-start">开始挑战</button>
+    <span class="meta">当前 <b id="m-len">—</b> 位 · 最佳 <b id="m-best">—</b> 位</span>
+  </div>
+  <div class="stage" id="m-stage">
+    <p id="m-msg">从 3 位数字开始,一路往上加。</p>
+    <div id="m-digits" style="display:none"></div>
+    <div id="m-input-row">
+      <input type="text" id="m-input" inputmode="numeric" autocomplete="off" aria-label="输入刚才的数字">
+      <button id="m-submit">确认</button>
+    </div>
+  </div>
+</section>
+
+<section id="aim">
+  <div class="sec-head"><span class="sec-num">05</span><h2>限时打靶</h2></div>
+  <p class="sec-desc">30 秒内点中尽可能多的靶子,点空算失误。练手眼协调,也顺便活动一下鼠标手。</p>
+  <div class="bar">
+    <button id="aim-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="aim-best">—</b> 中</span>
+  </div>
+  <div class="stage" id="aim-stage">
+    <span id="aim-hud"></span>
+    <p id="aim-msg">靶子会随机出现,看到就点。</p>
+    <div id="aim-target" aria-hidden="true"></div>
+  </div>
+  <p class="grade" id="aim-grade"></p>
+</section>
+
+<section id="simon">
+  <div class="sec-head"><span class="sec-num">06</span><h2>序列记忆</h2></div>
+  <p class="sec-desc">四个色块会按顺序依次亮起,看完凭记忆点出同样的顺序。每答对一轮,序列加长一位。</p>
+  <div class="bar">
+    <button id="sim-start">开始</button>
+    <span class="meta">当前 <b id="sim-round">—</b> 位 · 最佳 <b id="sim-best">—</b> 位</span>
+  </div>
+  <div id="sim-grid" aria-label="序列记忆色块">
+    <button data-i="0" style="background:var(--stop)" aria-label="红色块"></button>
+    <button data-i="1" style="background:var(--go)" aria-label="绿色块"></button>
+    <button data-i="2" style="background:var(--blue)" aria-label="蓝色块"></button>
+    <button data-i="3" style="background:var(--wait)" aria-label="黄色块"></button>
+  </div>
+  <p class="grade" id="sim-msg">看它亮,再照着点。</p>
+</section>
+
+<section id="odd">
+  <div class="sec-head"><span class="sec-num">07</span><h2>火眼金睛</h2></div>
+  <p class="sec-desc">30 秒限时:方阵里有一块的颜色和其他不一样,把它找出来。越往后方阵越大、色差越小。</p>
+  <div class="bar">
+    <button id="od-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="od-best">—</b> 关</span>
+  </div>
+  <div class="stage" id="od-stage">
+    <span id="od-hud"></span>
+    <p id="od-msg">考验色彩敏感度的时候到了。</p>
+    <div id="od-grid" style="display:none"></div>
+  </div>
+  <p class="grade" id="od-grade"></p>
+</section>
+
+<section id="math">
+  <div class="sec-head"><span class="sec-num">08</span><h2>心算冲刺</h2></div>
+  <p class="sec-desc">30 秒限时四则运算,在四个选项里点出正确答案,键盘 1–4 也行。别开计算器,练的就是你。</p>
+  <div class="bar">
+    <button id="mm-start">开始 30 秒</button>
+    <span class="meta">最佳 <b id="mm-best">—</b> 题</span>
+  </div>
+  <div class="stage" id="mm-stage" style="height:150px">
+    <span id="mm-hud"></span>
+    <p id="mm-msg">口算,启动。</p>
+    <div id="mm-q" style="display:none"></div>
+  </div>
+  <div class="opts" id="mm-opts" role="group" aria-label="答案选项">
+    <button data-i="0">—</button><button data-i="1">—</button><button data-i="2">—</button><button data-i="3">—</button>
+  </div>
+  <p class="grade" id="mm-grade"></p>
+</section>
+
+<section id="pairs">
+  <div class="sec-head"><span class="sec-num">09</span><h2>翻牌配对</h2></div>
+  <p class="sec-desc">16 张牌里藏着 8 对图案:翻两张,配上对就留下,配不上就盖回去。步数越少、越快越好。</p>
+  <div class="bar">
+    <button id="p-reset">重新发牌</button>
+    <span class="meta">步数 <b id="p-moves">0</b> · 用时 <b id="p-time">0.0</b> 秒 · 最快 <b id="p-best">—</b></span>
+  </div>
+  <div id="p-grid" aria-label="翻牌配对"></div>
+  <p class="grade" id="p-msg"></p>
+</section>
+
+<section id="eyes">
+  <div class="sec-head"><span class="sec-num">10</span><h2>护眼休息</h2></div>
+  <p class="sec-desc">20-20-20 法则:每工作 20 分钟,看 6 米(20 英尺)外的东西 20 秒。追踪训练时只动眼睛,不要动头。</p>
+  <div class="e-btns">
+    <button id="e-far">开始 20 秒远眺</button>
+    <button id="e-track">眼球追踪 30 秒</button>
+    <button id="e-stop">停止</button>
+  </div>
+  <div class="stage" id="e-stage">
+    <p id="e-msg">选一个模式开始。远眺时请离开屏幕,望向窗外最远的地方。</p>
+    <div id="ball" aria-hidden="true"></div>
+  </div>
+</section>
+
+<footer>
+  <p><b>关于「带薪健脑」</b>:纯静态单文件网页,无需联网即可使用;所有成绩只保存在你自己浏览器的本地存储里,不会上传到任何地方。放心摸,大胆健。</p>
+  <p>参考值:反应时间成年人平均约 200–270 ms;数字记忆广度普通人 5–9 位;Stroop 测试里「字义」和「字色」冲突时变慢是正常现象,练的就是压住这个本能。</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+var LS_OK=true;
+try{localStorage.setItem("__t","1");localStorage.removeItem("__t");}catch(e){LS_OK=false;}
+function load(k,d){if(!LS_OK)return d;try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch(e){return d;}}
+function save(k,v){if(!LS_OK)return;try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function cssVar(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
+
+/* ---------- 01 反应力 ---------- */
+var pad=document.getElementById("pad"),
+    padMain=document.getElementById("pad-main"),
+    padSub=document.getElementById("pad-sub"),
+    rLast=document.getElementById("r-last"),
+    rBest=document.getElementById("r-best"),
+    rAvg=document.getElementById("r-avg"),
+    rGrade=document.getElementById("r-grade");
+var rState="idle",rTO=null,rT0=0;
+var rHist=load("rt_hist",[]);
+var rBestVal=load("rt_best",null);
+
+function rRender(){
+  if(rBestVal!==null)rBest.textContent=rBestVal;
+  if(rHist.length){
+    rLast.textContent=rHist[rHist.length-1];
+    var sum=0;for(var i=0;i<rHist.length;i++)sum+=rHist[i];
+    rAvg.textContent=Math.round(sum/rHist.length);
+  }
+}
+function gradeOf(ms){
+  if(ms<200)return"⚡ "+ms+" ms — 电竞级反应,今天状态很猛";
+  if(ms<250)return ms+" ms — 优秀,脑子在线";
+  if(ms<320)return ms+" ms — 正常水平,稳住";
+  return ms+" ms — 有点迟钝了,起来接杯水吧";
+}
+function rGo(){
+  if(rState==="idle"||rState==="result"||rState==="early"){
+    rState="waiting";
+    pad.className="wait";
+    padMain.className="";padMain.textContent="等待变绿…";
+    padSub.textContent="变绿瞬间立刻点击";
+    rTO=setTimeout(function(){
+      rState="ready";rT0=performance.now();
+      pad.className="go";
+      padMain.textContent="点!";padSub.textContent="";
+    },1000+Math.random()*2600);
+  }else if(rState==="waiting"){
+    clearTimeout(rTO);rState="early";
+    pad.className="early";
+    padMain.textContent="抢跑了";padSub.textContent="点击再试一次";
+  }else if(rState==="ready"){
+    var dt=Math.round(performance.now()-rT0);
+    rState="result";
+    pad.className="";
+    padMain.className="num";padMain.textContent=dt+" ms";
+    padSub.textContent="点击再来一次";
+    rHist.push(dt);if(rHist.length>10)rHist=rHist.slice(-10);
+    if(rBestVal===null||dt<rBestVal)rBestVal=dt;
+    save("rt_hist",rHist);save("rt_best",rBestVal);
+    rGrade.textContent=gradeOf(dt);
+    rRender();
+  }
+}
+pad.addEventListener("pointerdown",function(e){e.preventDefault();rGo();});
+pad.addEventListener("keydown",function(e){
+  if(e.code==="Space"||e.code==="Enter"){e.preventDefault();rGo();}
+});
+document.addEventListener("keydown",function(e){
+  if(e.code==="Space"&&rState==="ready"&&document.activeElement!==pad
+     &&document.activeElement.tagName!=="INPUT"){e.preventDefault();rGo();}
+});
+rRender();
+
+/* ---------- 02 舒尔特方格 ---------- */
+var grid=document.getElementById("grid"),
+    sTime=document.getElementById("s-time"),
+    sBestEl=document.getElementById("s-best"),
+    sMsg=document.getElementById("s-msg"),
+    sizeBtns=document.querySelectorAll("#schulte .grp button");
+var sSize=5,sNext=1,sT0=null,sInt=null;
+var sBest=load("schulte_best",{});
+
+function sBestShow(){
+  var b=sBest[sSize];
+  sBestEl.textContent=b?b.toFixed(1)+" 秒":"—";
+}
+function sBuild(){
+  clearInterval(sInt);sInt=null;sT0=null;sNext=1;
+  sTime.textContent="0.0";sMsg.textContent="";sMsg.className="";
+  var n=sSize*sSize,nums=[];
+  for(var i=1;i<=n;i++)nums.push(i);
+  for(var j=nums.length-1;j>0;j--){
+    var k=Math.floor(Math.random()*(j+1)),t=nums[j];nums[j]=nums[k];nums[k]=t;
+  }
+  grid.style.gridTemplateColumns="repeat("+sSize+",minmax(0,1fr))";
+  grid.style.maxWidth=(sSize*68)+"px";
+  grid.innerHTML="";
+  nums.forEach(function(num){
+    var b=document.createElement("button");
+    b.textContent=num;
+    b.addEventListener("click",function(){
+      if(b.classList.contains("done"))return;
+      if(num!==sNext){
+        b.classList.add("wrong");
+        setTimeout(function(){b.classList.remove("wrong");},280);
+        return;
+      }
+      if(sNext===1){
+        sT0=performance.now();
+        sInt=setInterval(function(){
+          sTime.textContent=((performance.now()-sT0)/1000).toFixed(1);
+        },100);
+      }
+      b.classList.add("done");
+      sNext++;
+      if(sNext>sSize*sSize){
+        clearInterval(sInt);sInt=null;
+        var sec=(performance.now()-sT0)/1000;
+        sTime.textContent=sec.toFixed(1);
+        var isBest=!sBest[sSize]||sec<sBest[sSize];
+        if(isBest){sBest[sSize]=Math.round(sec*10)/10;save("schulte_best",sBest);}
+        sBestShow();
+        var good=sSize===5?30:(sSize===4?18:8);
+        sMsg.className="ok";
+        sMsg.textContent="完成!"+sec.toFixed(1)+" 秒"
+          +(isBest?" · 新纪录":"")
+          +(sec<=good?" · 专注力在线":" · 多练几次会更快");
+      }
+    });
+    grid.appendChild(b);
+  });
+}
+sizeBtns.forEach(function(btn){
+  btn.addEventListener("click",function(){
+    sizeBtns.forEach(function(b){b.setAttribute("aria-pressed","false");});
+    btn.setAttribute("aria-pressed","true");
+    sSize=parseInt(btn.dataset.size,10);
+    sBestShow();sBuild();
+  });
+});
+document.getElementById("s-reset").addEventListener("click",sBuild);
+sBestShow();sBuild();
+
+/* ---------- 03 Stroop 色词 ---------- */
+var stStart=document.getElementById("st-start"),
+    stWord=document.getElementById("st-word"),
+    stMsg=document.getElementById("st-msg"),
+    stHud=document.getElementById("st-hud"),
+    stGrade=document.getElementById("st-grade"),
+    stBestEl=document.getElementById("st-best"),
+    stBtns=document.querySelectorAll(".st-answers button");
+var ST_WORDS=["红","绿","蓝","黄"];
+var stOn=false,stAns=-1,stOK=0,stAll=0,stEnd=0,stTick=null;
+var stBest=load("stroop_best",null);
+if(stBest!==null)stBestEl.textContent=stBest;
+
+function stNext(){
+  var w=Math.floor(Math.random()*4),c;
+  if(Math.random()<0.72){do{c=Math.floor(Math.random()*4);}while(c===w);}
+  else c=w;
+  stAns=c;
+  var colors=[cssVar("--stop"),cssVar("--go"),cssVar("--blue"),cssVar("--wait")];
+  stWord.textContent=ST_WORDS[w];
+  stWord.style.color=colors[c];
+}
+function stFinish(){
+  stOn=false;clearInterval(stTick);stTick=null;
+  stWord.style.display="none";stMsg.style.display="block";stHud.textContent="";
+  var acc=stAll?Math.round(stOK/stAll*100):0;
+  var isBest=stBest===null||stOK>stBest;
+  if(isBest&&stAll>0){stBest=stOK;save("stroop_best",stBest);stBestEl.textContent=stBest;}
+  stMsg.innerHTML='<span class="big">'+stOK+' 题</span>正确率 '+acc+'%'+(isBest&&stAll>0?" · 新纪录":"");
+  stGrade.textContent=stOK>=25?"抗干扰能力拉满,大脑没在自动驾驶":
+                      stOK>=18?"不错,前额叶醒着呢":
+                      stAll>0?"字义的干扰不小吧?多练几轮就顺了":"";
+}
+stStart.addEventListener("click",function(){
+  stOn=true;stOK=0;stAll=0;stGrade.textContent="";
+  stMsg.style.display="none";stWord.style.display="block";
+  stEnd=performance.now()+30000;
+  stHud.textContent="30.0 s · 0 对";
+  stTick=setInterval(function(){
+    var left=(stEnd-performance.now())/1000;
+    if(left<=0){stFinish();return;}
+    stHud.textContent=left.toFixed(1)+" s · "+stOK+" 对";
+  },100);
+  stNext();
+});
+function stPick(c){
+  if(!stOn)return;
+  stAll++;
+  if(c===stAns)stOK++;
+  stNext();
+}
+stBtns.forEach(function(b){
+  b.addEventListener("click",function(){stPick(parseInt(b.dataset.c,10));});
+});
+document.addEventListener("keydown",function(e){
+  if(!stOn||document.activeElement.tagName==="INPUT")return;
+  var i="1234".indexOf(e.key);
+  if(i>-1){e.preventDefault();stPick(i);}
+});
+
+/* ---------- 04 数字记忆广度 ---------- */
+var mStart=document.getElementById("m-start"),
+    mMsg=document.getElementById("m-msg"),
+    mDigits=document.getElementById("m-digits"),
+    mRow=document.getElementById("m-input-row"),
+    mInput=document.getElementById("m-input"),
+    mSubmit=document.getElementById("m-submit"),
+    mLenEl=document.getElementById("m-len"),
+    mBestEl=document.getElementById("m-best");
+var mLen=3,mSeq="",mTOs=[],mPhase="idle";
+var mBest=load("span_best",null);
+if(mBest!==null)mBestEl.textContent=mBest;
+
+function mClearTOs(){mTOs.forEach(clearTimeout);mTOs=[];}
+function mShow(el){
+  [mMsg,mDigits,mRow].forEach(function(x){x.style.display="none";});
+  el.style.display=el===mRow?"flex":"block";
+}
+function mRound(){
+  mPhase="show";mLenEl.textContent=mLen;
+  mSeq="";
+  for(var i=0;i<mLen;i++){
+    var d;
+    do{d=String(Math.floor(Math.random()*10));}while(i>0&&d===mSeq[i-1]);
+    mSeq+=d;
+  }
+  mShow(mDigits);mDigits.textContent="";
+  var t=400;
+  for(var j=0;j<mSeq.length;j++){
+    (function(ch){
+      mTOs.push(setTimeout(function(){mDigits.textContent=ch;},t));
+      mTOs.push(setTimeout(function(){mDigits.textContent="";},t+620));
+    })(mSeq[j]);
+    t+=800;
+  }
+  mTOs.push(setTimeout(function(){
+    mPhase="input";
+    mShow(mRow);mInput.value="";mInput.focus();
+  },t+150));
+}
+function mCheck(){
+  if(mPhase!=="input")return;
+  var v=mInput.value.replace(/\D/g,"");
+  if(v===mSeq){
+    mLen++;
+    mPhase="gap";
+    mShow(mMsg);
+    mMsg.innerHTML='<span class="ok">正确!</span>下一轮 '+mLen+' 位,准备…';
+    mTOs.push(setTimeout(mRound,1100));
+  }else{
+    mPhase="idle";
+    var reached=mLen-1;
+    var isBest=reached>=3&&(mBest===null||reached>mBest);
+    if(isBest){mBest=reached;save("span_best",mBest);mBestEl.textContent=mBest;}
+    mShow(mMsg);
+    mMsg.innerHTML='<span class="big">'+reached+' 位</span>正确答案是 '+mSeq
+      +(isBest?" · 新纪录":"")
+      +(reached>=8?" · 记忆力惊人":reached>=6?" · 达到普通人水平线以上":" · 再战一局?");
+    mLenEl.textContent="—";
+  }
+}
+mStart.addEventListener("click",function(){
+  mClearTOs();mLen=3;mRound();
+});
+mSubmit.addEventListener("click",mCheck);
+mInput.addEventListener("keydown",function(e){
+  if(e.key==="Enter"){e.preventDefault();mCheck();}
+});
+
+/* ---------- 05 限时打靶 ---------- */
+var aimStart=document.getElementById("aim-start"),
+    aimStage=document.getElementById("aim-stage"),
+    aimTarget=document.getElementById("aim-target"),
+    aimMsg=document.getElementById("aim-msg"),
+    aimHud=document.getElementById("aim-hud"),
+    aimGrade=document.getElementById("aim-grade"),
+    aimBestEl=document.getElementById("aim-best");
+var aimOn=false,aimHits=0,aimMiss=0,aimEnd=0,aimTick=null;
+var aimBest=load("aim_best",null);
+if(aimBest!==null)aimBestEl.textContent=aimBest;
+
+function aimPlace(){
+  var W=aimStage.clientWidth,H=aimStage.clientHeight,S=46;
+  var x=8+Math.random()*(W-S-16),y=8+Math.random()*(H-S-16);
+  aimTarget.style.left=Math.round(x)+"px";
+  aimTarget.style.top=Math.round(y)+"px";
+}
+function aimFinish(){
+  aimOn=false;clearInterval(aimTick);aimTick=null;
+  aimTarget.style.display="none";aimMsg.style.display="block";aimHud.textContent="";
+  var total=aimHits+aimMiss;
+  var acc=total?Math.round(aimHits/total*100):0;
+  var isBest=aimBest===null||aimHits>aimBest;
+  if(isBest&&aimHits>0){aimBest=aimHits;save("aim_best",aimBest);aimBestEl.textContent=aimBest;}
+  aimMsg.innerHTML='<span class="big">'+aimHits+' 中</span>命中率 '+acc+'%'+(isBest&&aimHits>0?" · 新纪录":"");
+  aimGrade.textContent=aimHits>=40?"人体自瞄,建议去打职业":
+                       aimHits>=28?"手眼配合很顺,鼠标手今天不酸":
+                       aimHits>0?"热身完毕,再来一轮冲纪录":"";
+}
+aimStart.addEventListener("click",function(){
+  aimOn=true;aimHits=0;aimMiss=0;aimGrade.textContent="";
+  aimMsg.style.display="none";aimTarget.style.display="block";
+  aimEnd=performance.now()+30000;
+  aimHud.textContent="30.0 s · 0 中";
+  aimPlace();
+  aimTick=setInterval(function(){
+    var left=(aimEnd-performance.now())/1000;
+    if(left<=0){aimFinish();return;}
+    aimHud.textContent=left.toFixed(1)+" s · "+aimHits+" 中";
+  },100);
+});
+aimTarget.addEventListener("pointerdown",function(e){
+  if(!aimOn)return;
+  e.stopPropagation();e.preventDefault();
+  aimHits++;aimPlace();
+});
+aimStage.addEventListener("pointerdown",function(e){
+  if(!aimOn)return;
+  e.preventDefault();
+  aimMiss++;
+});
+
+/* ---------- 06 序列记忆 ---------- */
+var simTiles=document.querySelectorAll("#sim-grid button"),
+    simStart=document.getElementById("sim-start"),
+    simRound=document.getElementById("sim-round"),
+    simBestEl=document.getElementById("sim-best"),
+    simMsg=document.getElementById("sim-msg");
+var simSeq=[],simPos=0,simPhase="idle",simTOs=[];
+var simBest=load("simon_best",null);
+if(simBest!==null)simBestEl.textContent=simBest;
+
+function simClear(){simTOs.forEach(clearTimeout);simTOs=[];}
+function simFlash(i,d){
+  simTiles[i].classList.add("lit");
+  setTimeout(function(){simTiles[i].classList.remove("lit");},d||360);
+}
+function simPlay(){
+  simPhase="show";
+  simRound.textContent=simSeq.length;
+  simMsg.textContent="记住顺序…";
+  simSeq.forEach(function(v,idx){
+    simTOs.push(setTimeout(function(){simFlash(v);},500+idx*620));
+  });
+  simTOs.push(setTimeout(function(){
+    simPhase="input";simPos=0;
+    simMsg.textContent="轮到你了";
+  },500+simSeq.length*620));
+}
+simStart.addEventListener("click",function(){
+  simClear();
+  simSeq=[Math.floor(Math.random()*4)];
+  simPlay();
+});
+simTiles.forEach(function(t){
+  t.addEventListener("click",function(){
+    if(simPhase!=="input")return;
+    var i=parseInt(t.dataset.i,10);
+    simFlash(i,200);
+    if(i===simSeq[simPos]){
+      simPos++;
+      if(simPos===simSeq.length){
+        simPhase="gap";
+        simMsg.textContent="正确!下一轮…";
+        simTOs.push(setTimeout(function(){
+          simSeq.push(Math.floor(Math.random()*4));
+          simPlay();
+        },900));
+      }
+    }else{
+      simPhase="idle";
+      var score=simSeq.length-1;
+      var isBest=score>0&&(simBest===null||score>simBest);
+      if(isBest){simBest=score;save("simon_best",simBest);simBestEl.textContent=simBest;}
+      simMsg.textContent="止步 "+score+" 位"+(isBest?" · 新纪录":"")
+        +(score>=8?" · 顺序记忆很能打":score>=5?" · 正常发挥,再来一局":" · 热身局,不算");
+      simRound.textContent="—";
+    }
+  });
+});
+
+/* ---------- 07 火眼金睛 ---------- */
+var odStart=document.getElementById("od-start"),
+    odStage=document.getElementById("od-stage"),
+    odGrid=document.getElementById("od-grid"),
+    odMsg=document.getElementById("od-msg"),
+    odHud=document.getElementById("od-hud"),
+    odGrade=document.getElementById("od-grade"),
+    odBestEl=document.getElementById("od-best");
+var odOn=false,odLvl=1,odEnd=0,odTick=null;
+var odBest=load("odd_best",null);
+if(odBest!==null)odBestEl.textContent=odBest;
+
+function odBuild(){
+  var n=Math.min(2+Math.floor((odLvl-1)/2),6);
+  var hue=Math.floor(Math.random()*360),
+      sat=55+Math.floor(Math.random()*15),
+      light=46+Math.floor(Math.random()*10),
+      delta=Math.max(7,26-odLvl*1.6);
+  if(hue>40&&hue<180)delta*=1.5;
+  delta=Math.round(delta);
+  var sign=light>52?-1:1,
+      oddIdx=Math.floor(Math.random()*n*n);
+  odGrid.style.gridTemplateColumns="repeat("+n+",minmax(0,1fr))";
+  odGrid.style.maxWidth=Math.min(n*58,320)+"px";
+  odGrid.innerHTML="";
+  for(var i=0;i<n*n;i++){
+    (function(idx){
+      var b=document.createElement("button");
+      var l=idx===oddIdx?light+sign*delta:light;
+      b.style.background="hsl("+hue+" "+sat+"% "+l+"%)";
+      b.setAttribute("aria-label",idx===oddIdx?"不同的色块":"色块");
+      b.addEventListener("pointerdown",function(e){
+        if(!odOn)return;
+        e.preventDefault();
+        if(idx===oddIdx){odLvl++;odBuild();}
+        else{
+          b.classList.add("oops");
+          setTimeout(function(){b.classList.remove("oops");},250);
+        }
+      });
+      odGrid.appendChild(b);
+    })(i);
+  }
+}
+function odFinish(){
+  odOn=false;clearInterval(odTick);odTick=null;
+  odGrid.style.display="none";odMsg.style.display="block";odHud.textContent="";
+  var cleared=odLvl-1;
+  var isBest=cleared>0&&(odBest===null||cleared>odBest);
+  if(isBest){odBest=cleared;save("odd_best",odBest);odBestEl.textContent=odBest;}
+  odMsg.innerHTML='<span class="big">'+cleared+' 关</span>'+(isBest?"新纪录":"时间到");
+  odGrade.textContent=cleared>=14?"像素眼认证,设计师看了都点头":
+                      cleared>=9?"色彩敏感度在线":
+                      cleared>0?"后面色差很小,正常,多练":"";
+}
+odStart.addEventListener("click",function(){
+  odOn=true;odLvl=1;odGrade.textContent="";
+  odMsg.style.display="none";odGrid.style.display="grid";
+  odEnd=performance.now()+30000;
+  odHud.textContent="30.0 s · 第 1 关";
+  odTick=setInterval(function(){
+    var left=(odEnd-performance.now())/1000;
+    if(left<=0){odFinish();return;}
+    odHud.textContent=left.toFixed(1)+" s · 第 "+odLvl+" 关";
+  },100);
+  odBuild();
+});
+
+/* ---------- 08 心算冲刺 ---------- */
+var mmStart=document.getElementById("mm-start"),
+    mmQ=document.getElementById("mm-q"),
+    mmMsg=document.getElementById("mm-msg"),
+    mmHud=document.getElementById("mm-hud"),
+    mmGrade=document.getElementById("mm-grade"),
+    mmBestEl=document.getElementById("mm-best"),
+    mmBtns=document.querySelectorAll("#mm-opts button");
+var mmOn=false,mmOK=0,mmAll=0,mmAns=0,mmEnd=0,mmTick=null;
+var mmBest=load("math_best",null);
+if(mmBest!==null)mmBestEl.textContent=mmBest;
+
+function ri(a,b){return a+Math.floor(Math.random()*(b-a+1));}
+function mmNext(){
+  var op=Math.floor(Math.random()*3),a,b,ans,txt;
+  if(op===0){a=ri(6,59);b=ri(6,59);ans=a+b;txt=a+" + "+b;}
+  else if(op===1){a=ri(15,89);b=ri(4,a-3);ans=a-b;txt=a+" − "+b;}
+  else{a=ri(3,12);b=ri(3,12);ans=a*b;txt=a+" × "+b;}
+  mmAns=ans;
+  mmQ.textContent=txt+" = ?";
+  var opts=[ans],guard=0;
+  while(opts.length<4&&guard<60){
+    guard++;
+    var d=ans+(Math.random()<0.5?-1:1)*ri(1,10);
+    if(d>=0&&opts.indexOf(d)===-1)opts.push(d);
+  }
+  for(var j=opts.length-1;j>0;j--){
+    var k=Math.floor(Math.random()*(j+1)),t=opts[j];opts[j]=opts[k];opts[k]=t;
+  }
+  mmBtns.forEach(function(btn,i){btn.textContent=opts[i];});
+}
+function mmFinish(){
+  mmOn=false;clearInterval(mmTick);mmTick=null;
+  mmQ.style.display="none";mmMsg.style.display="block";mmHud.textContent="";
+  mmBtns.forEach(function(btn){btn.textContent="—";});
+  var acc=mmAll?Math.round(mmOK/mmAll*100):0;
+  var isBest=mmAll>0&&(mmBest===null||mmOK>mmBest);
+  if(isBest){mmBest=mmOK;save("math_best",mmBest);mmBestEl.textContent=mmBest;}
+  mmMsg.innerHTML='<span class="big">'+mmOK+' 题</span>正确率 '+acc+'%'+(isBest?" · 新纪录":"");
+  mmGrade.textContent=mmOK>=18?"心算引擎满转,报销单可以口算了":
+                      mmOK>=12?"不错,数字脑醒着":
+                      mmAll>0?"慢即是稳,先保正确率再提速":"";
+}
+mmStart.addEventListener("click",function(){
+  mmOn=true;mmOK=0;mmAll=0;mmGrade.textContent="";
+  mmMsg.style.display="none";mmQ.style.display="block";
+  mmEnd=performance.now()+30000;
+  mmHud.textContent="30.0 s · 0 对";
+  mmTick=setInterval(function(){
+    var left=(mmEnd-performance.now())/1000;
+    if(left<=0){mmFinish();return;}
+    mmHud.textContent=left.toFixed(1)+" s · "+mmOK+" 对";
+  },100);
+  mmNext();
+});
+function mmPick(i){
+  if(!mmOn)return;
+  mmAll++;
+  if(parseInt(mmBtns[i].textContent,10)===mmAns)mmOK++;
+  mmNext();
+}
+mmBtns.forEach(function(btn,i){
+  btn.addEventListener("click",function(){mmPick(i);});
+});
+document.addEventListener("keydown",function(e){
+  if(!mmOn||document.activeElement.tagName==="INPUT")return;
+  var i="1234".indexOf(e.key);
+  if(i>-1){e.preventDefault();mmPick(i);}
+});
+
+/* ---------- 09 翻牌配对 ---------- */
+var pGrid=document.getElementById("p-grid"),
+    pMovesEl=document.getElementById("p-moves"),
+    pTimeEl=document.getElementById("p-time"),
+    pBestEl=document.getElementById("p-best"),
+    pMsg=document.getElementById("p-msg");
+var P_SYMS=["🍀","🌙","⚡","🍎","🎧","🚀","🐟","🔥"];
+var pFirst=null,pLock=false,pMoves=0,pMatched=0,pT0=null,pInt=null;
+var pBest=load("pairs_best",null);
+if(pBest!==null)pBestEl.textContent=pBest.toFixed(1)+" 秒";
+
+function pBuild(){
+  clearInterval(pInt);pInt=null;pT0=null;
+  pFirst=null;pLock=false;pMoves=0;pMatched=0;
+  pMovesEl.textContent="0";pTimeEl.textContent="0.0";
+  pMsg.textContent="";pMsg.className="grade";
+  var deck=P_SYMS.concat(P_SYMS);
+  for(var j=deck.length-1;j>0;j--){
+    var k=Math.floor(Math.random()*(j+1)),t=deck[j];deck[j]=deck[k];deck[k]=t;
+  }
+  pGrid.innerHTML="";
+  deck.forEach(function(sym){
+    var b=document.createElement("button");
+    b.dataset.sym=sym;
+    b.innerHTML='<span class="q">?</span>';
+    b.setAttribute("aria-label","盖着的牌");
+    b.addEventListener("click",function(){
+      if(pLock||b===pFirst||b.classList.contains("hit"))return;
+      if(!pT0){
+        pT0=performance.now();
+        pInt=setInterval(function(){
+          pTimeEl.textContent=((performance.now()-pT0)/1000).toFixed(1);
+        },100);
+      }
+      b.textContent=sym;b.classList.add("flip");
+      if(!pFirst){pFirst=b;return;}
+      pMoves++;pMovesEl.textContent=pMoves;
+      var a=pFirst;
+      if(a.dataset.sym===sym){
+        a.classList.remove("flip");b.classList.remove("flip");
+        a.classList.add("hit");b.classList.add("hit");
+        pFirst=null;pMatched++;
+        if(pMatched===P_SYMS.length){
+          clearInterval(pInt);pInt=null;
+          var sec=(performance.now()-pT0)/1000;
+          pTimeEl.textContent=sec.toFixed(1);
+          var isBest=pBest===null||sec<pBest;
+          if(isBest){pBest=Math.round(sec*10)/10;save("pairs_best",pBest);pBestEl.textContent=pBest.toFixed(1)+" 秒";}
+          pMsg.className="grade";
+          pMsg.textContent="完成!"+pMoves+" 步 · "+sec.toFixed(1)+" 秒"
+            +(isBest?" · 新纪录":"")
+            +(pMoves<=12?" · 记忆宫殿住户":pMoves<=18?" · 短时记忆在线":" · 再来一局练练");
+        }
+      }else{
+        pLock=true;
+        setTimeout(function(){
+          a.innerHTML='<span class="q">?</span>';b.innerHTML='<span class="q">?</span>';
+          a.classList.remove("flip");b.classList.remove("flip");
+          pFirst=null;pLock=false;
+        },680);
+      }
+    });
+    pGrid.appendChild(b);
+  });
+}
+document.getElementById("p-reset").addEventListener("click",pBuild);
+pBuild();
+
+/* ---------- 10 护眼休息 ---------- */
+var eStage=document.getElementById("e-stage"),
+    eMsg=document.getElementById("e-msg"),
+    ball=document.getElementById("ball");
+var eInt=null,eRAF=null;
+function eStop(msg){
+  clearInterval(eInt);eInt=null;
+  if(eRAF)cancelAnimationFrame(eRAF);eRAF=null;
+  ball.style.display="none";
+  eMsg.style.display="block";
+  if(msg)eMsg.innerHTML=msg;
+}
+document.getElementById("e-far").addEventListener("click",function(){
+  eStop();
+  var left=20;
+  function tick(){
+    eMsg.innerHTML='<span class="big">'+left+'</span>望向 6 米外,让睫状肌放松';
+  }
+  tick();
+  eInt=setInterval(function(){
+    left--;
+    if(left<=0){eStop('<span class="ok">眼睛充好电了,继续搬砖</span>');return;}
+    tick();
+  },1000);
+});
+document.getElementById("e-track").addEventListener("click",function(){
+  eStop();
+  eMsg.style.display="none";
+  ball.style.display="block";
+  var t0=performance.now();
+  function step(now){
+    var t=(now-t0)/1000;
+    if(t>=30){eStop('<span class="ok">追踪完成,闭眼眨眼各三次</span>');return;}
+    var W=eStage.clientWidth,H=eStage.clientHeight,a=t*0.9;
+    var x=W/2+(W/2-32)*Math.sin(a);
+    var y=H/2+(H/2-28)*Math.sin(a*2)*0.82;
+    ball.style.left=Math.round(x-12)+"px";
+    ball.style.top=Math.round(y-12)+"px";
+    eRAF=requestAnimationFrame(step);
+  }
+  eRAF=requestAnimationFrame(step);
+});
+document.getElementById("e-stop").addEventListener("click",function(){
+  eStop("选一个模式开始。远眺时请离开屏幕,望向窗外最远的地方。");
+});
+})();
+</script>
+</body>
+</html>
